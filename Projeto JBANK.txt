@@ -15,108 +15,107 @@
  let opcao5 = sair;*/
 
 
-var nome = "Juliana";
-var agencia = 2101;
-var conta = 1991;
-var senha = 210191;
-var tentativa = 3;
-var saldo = 8500;
-var saque, deposito, emprestimo;
-
-function login(){
-qual_agencia = prompt("DIGITE SUA AGÊNCIA: " );
-qual_conta = prompt("DIGITE SUA CONTA: ");
-qual_senha = prompt("DIGITE SUA SENHA: ");
-
-if(agencia == qual_agencia && qual_conta == conta && qual_senha == senha){
-    alert("JBank! Bem-vindo a sua conta! " + nome );
-    menuprincipal();
-
-} else {
-    while(tentativa > 0){
-        tentativa--;
-        console.log("Login ou senha errado. Tente novamente.");
-        login();
-
-    }
-    if(tentativa == 0){
-        alert("VOCÊ EXCEDEU O NÚMERO MÁXIMO DE TENTATIVAS.");
-        exit(0);
-    }
-}
-}
-
-function sacar(){
-   saque = parseInt(prompt("Digite o valor do saque"));
-   
-    if(saldo > 0){
-        saldo = saldo - saque;
-        alert("Saque de R$" + saque + ". Saldo atual: " + saldo);        
-        menuprincipal(); // ainda não existe essa função!!
-    }else{
-        alert("Você não tem saldo, o saque não foi efetuado.");
-    }
-
-    menuprincipal();
-    
-}
-
-function depositar(){
-    deposito = parseInt(prompt("Digite o valor para depósito: "));
-
-    if(deposito <= 3000){
-        prompt("INSIRA O VALOR PARA DEPÓSITO: ")
-        alert("DEPÓSITO ACEITO.");
-    }else{
-        console.log("O VALOR MÁXIMO PARA DEPÓSITOS É DE ATÉ R$3.000,00");
-    }
-    menuprincipal();
-}
-
-function extrato(){
-    alert(" SALDO R$ \n "+ saldo, "SAQUES R$ \n"+ saque, "DEPÓSITO R$ \n"+ deposito,"EMPRÉSTIMOS R$ \n"+ emprestimo);
-    menuprincipal(); 
-}
-
-function emprestar(){
-    emprestimo = parseInt(prompt("DIGITE O VALOR DESEJADO: "));
-    if(emprestimo <= 6.000){
-        alert("EMPRÉSTIMO SOLICITADO. PRAZO DE ATÉ 48h PARA RETORNO COM A DECISÃO");
-
-    }else{
-        alert("LIMITE DE EMPRÉSTIMO = R$6.000,00")
-    }
-    menuprincipal();
-}
-   
-
-function menuprincipal() {
-   opcao = prompt("Opções: \n 1-Saque \n 2-Depósito \n 3-Extrato \n 4-Empréstimo \n 5-Sair. ");
-   switch (opcao) {
-    case "1":
-        sacar();
-        
-        break;
-    case "2":
-        depositar();
-        break;
-    case "3":
-        extrato();
-        break;
-    case "4":
-        emprestar();
-        break;
-    case "5":
-        alert("Obrigado por utilizar nosso terminal. Volte sempre.");
-        exit(0);
-        break;            
-   
-    default:
-            break;
-   }
-
-
-
-}
-login();
+ var nome = "Juliana";
+ var agencia = 2101;
+ var conta = 1991;
+ var senha = 210191;
+ var tentativa = 3;
+ var saldo = 8500;
+ var saque, deposito, emprestimo;
  
+ function login(){
+ qual_agencia = prompt("DIGITE SUA AGÊNCIA: " );
+ qual_conta = prompt("DIGITE SUA CONTA: ");
+ qual_senha = prompt("DIGITE SUA SENHA: ");
+ 
+ if(agencia == qual_agencia && qual_conta == conta && qual_senha == senha){
+     alert("JBank! Bem-vindo a sua conta! " + nome );
+     menuprincipal();
+ 
+ } else {
+     while(tentativa > 0){
+         tentativa--;
+         console.log("Login ou senha errado. Tente novamente.");
+         login();
+ 
+     }
+     if(tentativa == 0){
+         alert("VOCÊ EXCEDEU O NÚMERO MÁXIMO DE TENTATIVAS.");
+         exit(0);
+     }
+ }
+ }
+ 
+ function sacar(){
+    saque = parseInt(prompt("Digite o valor do saque"));
+    
+     if(saldo > 0){
+         saldo = saldo - saque;
+         alert("Saque de R$" + saque + ". Saldo atual: " + saldo);        
+         menuprincipal(); // ainda não existe essa função!!
+     }else{
+         alert("Você não tem saldo, o saque não foi efetuado.");
+     }
+ 
+     menuprincipal();
+     
+ }
+ 
+ function depositar(){
+     deposito = parseInt(prompt("Digite o valor para depósito: "));
+ 
+     if(deposito <= 3000){
+         alert("DEPÓSITO ACEITO.");
+     }else{
+         console.log("O VALOR MÁXIMO PARA DEPÓSITOS É DE ATÉ R$3.000,00");
+     }
+     menuprincipal();
+ }
+ 
+ function extrato(){
+     alert(" SALDO R$ "+ saldo + "\n" + "SAQUES R$ "+ saque +"\n" + "DEPÓSITO R$ "+ deposito + "\n" + "EMPRÉSTIMOS R$ "+ emprestimo +"\n");
+     menuprincipal(); 
+ }
+ 
+ function emprestar(){
+     emprestimo = parseInt(prompt("DIGITE O VALOR DESEJADO: "));
+     if(emprestimo <= 6.000){
+         alert("EMPRÉSTIMO SOLICITADO. PRAZO DE ATÉ 48h PARA RETORNO COM A DECISÃO");
+ 
+     }else{
+         alert("LIMITE DE EMPRÉSTIMO = R$6.000,00")
+     }
+     menuprincipal();
+ }
+    
+ 
+ function menuprincipal() {
+    opcao = prompt("Opções: \n 1-Saque \n 2-Depósito \n 3-Extrato \n 4-Empréstimo \n 5-Sair. ");
+    switch (opcao) {
+     case "1":
+         sacar();
+         
+         break;
+     case "2":
+         depositar();
+         break;
+     case "3":
+         extrato();
+         break;
+     case "4":
+         emprestar();
+         break;
+     case "5":
+         alert("Obrigado por utilizar nosso terminal. Volte sempre.");
+         exit(0);
+         break;            
+    
+     default:
+             break;
+    }
+ 
+ 
+ 
+ }
+ login();
+  
